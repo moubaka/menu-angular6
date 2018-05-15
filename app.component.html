@@ -1,0 +1,12 @@
+<div>
+  {{ currentDepartment }}
+
+  <span style="margin-left: 60px;" (click)="showOptions(true)" *ngIf='!showMenu'>></span>
+  <span style="margin-left: 60px;" (click)="showOptions(false)" *ngIf='showMenu'>x</span>
+</div>
+
+<div *ngFor="let option of dropDownOptions" [hidden]="!showMenu">
+  <span (click)="currentDepartment=option; showOptions(false)">
+    {{option}}
+  </span>
+</div>
